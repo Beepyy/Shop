@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for good in Goods %}
+
+<a href="{% url 'good' good.category good.pk %}">{{good.name}}</a>
+{% endfor %}
+{% endblock %}

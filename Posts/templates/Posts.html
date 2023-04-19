@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for Post in Posts %}
+<h2><a href="{% url 'Post' Post.pk %}"> {{Post.pk}}. {{Post.title}}</a></h2>
+{% empty %}
+<p>Нету постов!</p>
+{% endfor %}
+{% endblock %}

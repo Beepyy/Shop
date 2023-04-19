@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>{{Person}}</h3>
+{% for skill in Skills %}
+    <h5>{{skill}}-{{skill.percent}}</h5>
+    <p>{{skill.description}}</p>
+{% empty %}
+<p>Нету навыков</p>
+{% endfor %}
+
+{% endblock %}

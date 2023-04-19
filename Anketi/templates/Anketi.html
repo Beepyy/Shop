@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+{% for Person in Persons %}
+
+    <a href="{% url 'Anketa' Person.id %}">{{Person.First_Name}}</a>
+
+{% endfor %}
+{% endblock %}
