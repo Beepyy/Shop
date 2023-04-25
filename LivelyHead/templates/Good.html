@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<h3>{{Good.name}}</h3>
-<p>{{Good.description}}</p>
-<p>Всего товара: {{Good.in_stock}}</p>
-<h5>Цена: {{Good.price}}</h5>
+<p class="price">${{ product.price }}</p>
+<form action="{% url "cart:cart_add" Good.id %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Add to cart">
+    <h3>{{Good.name}}</h3>
+    <p>{{Good.description}}</p>
+    <p>Всего товара: {{Good.in_stock}}</p>
+    <h5>Цена: {{Good.price}}</h5>
+    {{ cart_product_form }}
+</form>
 {% endblock %}

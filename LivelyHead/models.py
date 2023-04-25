@@ -29,6 +29,7 @@ class Good(models.Model):
     class Meta:
         ordering = ('name',)
         index_together = (('id', 'slug'),)
+    
 
 
 class Order(models.Model):
